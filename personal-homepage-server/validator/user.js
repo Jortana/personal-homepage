@@ -13,7 +13,8 @@ exports.login = [
     body('user.username').custom(async (username, { req }) => {
       const user = await User.findOne({ username }).select([
         'username',
-        'password'
+        'password',
+        'roles'
       ])
 
       if (!user) {

@@ -11,6 +11,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     set: (value) => sha1(value),
     select: false
+  },
+  roles: {
+    type: [Number],
+    default: [1]
   }
 })
 
